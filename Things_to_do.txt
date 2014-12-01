@@ -1,0 +1,38 @@
+**High Priority**
+incorporate the levels
+finish the tutorial
+get better title cards
+Learn how to use Github
+
+**Mid Priority**
+implement sound effects
+implement Music
+implement animation in hero
+implement animation in star
+Add Blocks into game
+implement pushing panels
+Finish Refactor of code
+
+**Low Priority**
+Add stairs to game
+Create different star types
+Add extra Characters
+make the character bigger
+
+**Negligible Priority**
+Add a contra cheat-code ^^VV<><>BASTART- O.o WHAt?
+Add a credits option
+Add batman Easter egg
+Add a play sounds/music option
+Add achievements
+Add a Two Player Mode
+Add a Story
+Add cut scenes
+Add a timer
+
+**Wishlist**
+Add slanted walls like /\
+Add a savegame
+Incorporate mouse controls
+Incorporate touchscreen controls
+port to android

@@ -1,0 +1,46 @@
+----------Robert Gunther-----------
+=========November 22 2014=========
+Added three more stars
+Added six more walls
+Enabled pause
+Enabled exit via Esc Button
+Added a title screen function
+Enabled the use of a background
+Added a logos
+----------Robert Gunther-----------
+=========November 23 2014==========
+Added a title animation
+removed the stdio libary components
+removed all printf statements
+changed SDL Delay time
+renamed pausechange to boolchange
+Added a pause screenshot
+Fixed bug created by pausefunction
+Added a help screen
+Removed a pointless function passer
+Created a namespace to hold all of the Ltextures
+ objects
+Added a fully-functioning tutorial with three l
+evels
+*Tutorial needs finished backgrounds currently h
+as default
+minutely refactored the code
+*code needs heavy refactoring
+*discovered how to make telekinetic blocks
+-change to !collision 
+----------Robert Gunther-----------
+=========November 24 2014==========
+Added text to the tutorials screen
+optimized the pause screen 
+changed the star texture
+Added several functions to promote encapsulation
+added the outside functions to namespace StarPusher
+added a deconstructor to hero
+implemented deconstructors at the end of main
+freed textures in close
+created a sub function for opening piece
+---------Robert Gunther-----------
+========November 25 2014==========
+Fixed a superspeed/become the star bug in tutorial level three
+put all the textures in a folder
+
