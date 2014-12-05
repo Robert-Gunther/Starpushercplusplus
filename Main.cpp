@@ -33,7 +33,6 @@ LTexture gback;
 LTexture openingone;
 LTexture openingtwo;
 LTexture openingthree;
-LTexture openingfour;
 LTexture Titleone;
 LTexture Titletwo;
 LTexture Titlethree;
@@ -138,7 +137,7 @@ int main(int argc, char* args[]) {
                                 if (start==true&&pause==false&&help==false&&tutorial==false){
                                    start=false;
                                    game=true;
-                                   level=1;
+                                   level++;
                                    create=true;
                                 }
                                 break;
@@ -161,6 +160,8 @@ int main(int argc, char* args[]) {
                                 help=false;
                                 tutorial=false;
                                 game=false;
+                                tutor=ZERO;
+                                level=ZERO;
                                 }
                                 else{}
                                 break;
@@ -189,7 +190,7 @@ int main(int argc, char* args[]) {
                         startwo.setoffscreen();
                         starthree.setoffscreen();
                         starfour.setoffscreen();
-                        starfive.setoffscreen();
+                         starfive.setoffscreen();
                         wallone.setoffscreen();
                         walltwo.setoffscreen();
                         wallthree.setoffscreen();
@@ -503,14 +504,14 @@ bool init() {
         }
     return true;
     }
-bool loadMedia() {
+bool loadMedia() {// Bad Design created to close the game if a picture is not present
     if(!Titlethirteen.loadFromFile("Textures/Title13.png")||!Titletwelve.loadFromFile("Textures/Title12.png")
        ||!Titleten.loadFromFile("Textures/Title10.png")||!Titlenine.loadFromFile("Textures/Title9.png")
        ||!Titleeight.loadFromFile("Textures/Title8.png")||!Titleseven.loadFromFile("Textures/Title7.png")
        ||!Titlesix.loadFromFile("Textures/Title6.png")||!Titlefive.loadFromFile("Textures/Title5.png")
        ||!Titlefour.loadFromFile("Textures/Title4.png")||!Titlethree.loadFromFile("Textures/Title3.png")
        ||!Titletwo.loadFromFile("Textures/Title2.png")||!Titleone.loadFromFile("Textures/Title1.png")
-       ||!openingfour.loadFromFile("Textures/openingfour.png")||!openingthree.loadFromFile("Textures/openingthree.png")
+       ||!openingthree.loadFromFile("Textures/openingthree.png")||!Tutorialthree.loadFromFile("Textures/tutorialthree.png")
        ||!openingtwo.loadFromFile("Textures/openingtwo.png")||!openingone.loadFromFile("Textures/openingone.png")
        ||!gback.loadFromFile("Textures/background.png")||!gheroTexture.loadFromFile("Textures/hero.png")
        ||!gstarTexture.loadFromFile("Textures/star.png")||!Titleeleven.loadFromFile("Textures/Title11.png")
@@ -520,8 +521,7 @@ bool loadMedia() {
        ||!Tutorialtwo.loadFromFile("Textures/tutorialtwo.png")||!g50x300wall.loadFromFile("Textures/50X300wall.png")
        ||!g50x50wall.loadFromFile("Textures/50X50wall.png")||!g50x100wall.loadFromFile("Textures/50X100wall.png")
        ||!g50x150wall.loadFromFile("Textures/50X150wall.png")||!g450x50wall.loadFromFile("Textures/450X50wall.png")
-       ||!g500x50wall.loadFromFile("Textures/500X50wall.png")||!youwin.loadFromFile("Textures/Awinnerisyou.png")
-       ||!Tutorialthree.loadFromFile("Textures/tutorialthree.png")){
+       ||!g500x50wall.loadFromFile("Textures/500X50wall.png")||!youwin.loadFromFile("Textures/Awinnerisyou.png")){
         return false;
         }
        else{return true;}
@@ -566,12 +566,9 @@ void openingpiece(){
             openingthree.render(ZERO,ZERO);
             rendersubroutine(3000);
             openingtwo.free();
-            openingfour.render(ZERO,ZERO);
-            rendersubroutine(3000);
-            openingthree.free();
             Titleone.render(ZERO,ZERO);
             rendersubroutine(60);
-            openingfour.free();
+            openingthree.free();
             Titletwo.render(ZERO,ZERO);
             rendersubroutine(60);
             Titleone.free();

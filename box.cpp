@@ -2,16 +2,19 @@
 #include <SDL.h>
 #include "wall.h"
 #define offcoord -1000
+#define WIDTH 40
+#define HEIGHT 40
+#define ZERO 0
 box::box(int x, int y){
     setcoords(x,y);
-    crate.w=40;
-    crate.h=40;
+    crate.w=WIDTH;
+    crate.h=HEIGHT;
     setorgcoords();
 }
 box::box(){
     setoffscreen();
-    crate.w=40;
-    crate.h=40;
+    crate.w=WIDTH;
+    crate.h=HEIGHT;
     setorgcoords();
 }
 box::~box(){}
@@ -52,8 +55,8 @@ if(checkCollision(wallone.getwall())
         ||checkCollision(starthree.getbox())
         ||checkCollision(starfour.getbox())
         ||checkCollision(starfive.getbox())
-        ||(crate.x < 0) || (crate.x + crate.w > SCREEN_WIDTH)
-        ||(crate.y < 0) || (crate.y + crate.h > SCREEN_HEIGHT)) {
+        ||(crate.x < ZERO) || (crate.x + crate.w > SCREEN_WIDTH)
+        ||(crate.y < ZERO) || (crate.y + crate.h > SCREEN_HEIGHT)) {
     resetcoords();
     }
                    }

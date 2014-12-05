@@ -2,15 +2,14 @@
 #include "LTextures.h"
 #include "box.h"
 #include <iostream>
+#define ZERO 0
 hero::hero() {
-    x = 0;
-    y = 0;
+    x = ZERO;
+    y = ZERO;
     mCollider.w = hero_WIDTH;
     mCollider.h = hero_HEIGHT;
-    mVelX = 0;
-    mVelY = 0;
-    SCREEN_HEIGHT=480;
-    SCREEN_WIDTH=640;
+    mVelX = ZERO;
+    mVelY = ZERO;
     }
 hero::~hero(){}
 void hero::setx(int x){this->x=x;}
@@ -21,9 +20,9 @@ void hero::setcoords(int x, int y){
         }
 int hero::getx(){return x;}
 int hero::gety(){return y;}
-void hero::setdefault(){setcoords(0,0);}
+void hero::setdefault(){setcoords(ZERO,ZERO);}
 void hero::Event(SDL_Event& e) {
-    if(e.type == SDL_KEYDOWN && e.key.repeat == 0) {
+    if(e.type == SDL_KEYDOWN && e.key.repeat == ZERO) {
         switch(e.key.keysym.sym) {
             case SDLK_UP:
                 mVelY -= hero_VEL;
@@ -39,7 +38,7 @@ void hero::Event(SDL_Event& e) {
                 break;
             }
         }
-    else if(e.type == SDL_KEYUP && e.key.repeat == 0) {
+    else if(e.type == SDL_KEYUP && e.key.repeat == ZERO) {
         //Adjust the velocity
         switch(e.key.keysym.sym) {
             case SDLK_UP:
@@ -62,7 +61,7 @@ box hero::move(box star) {
     x += mVelX;
     mCollider.x = x;
     //If the hero collided with a star extra added to prevent a bug
-    if((x < 0) || (x + hero_WIDTH > SCREEN_WIDTH)||checkCollision(star.getbox())) {
+    if((x < ZERO) || (x + hero_WIDTH > SCREEN_WIDTH)||checkCollision(star.getbox())) {
         //Move back
         star.setx(star.getx()+mVelX);
         x -= mVelX;
@@ -72,7 +71,7 @@ box hero::move(box star) {
     y += mVelY;
     mCollider.y = y;
     //If the hero collided with a star extra added to prevent a bug
-    if((y < 0) || (y + hero_HEIGHT > SCREEN_HEIGHT)||checkCollision(star.getbox())) {
+    if((y < ZERO) || (y + hero_HEIGHT > SCREEN_HEIGHT)||checkCollision(star.getbox())) {
         //Move back
         star.sety((star.gety()+mVelY));
         y -= mVelY;
@@ -85,7 +84,7 @@ void hero::move(wall holdpiece) {
     x += mVelX;
     mCollider.x = x+1;
     //If the hero collided or went too far to the left or right
-    if((x < 0) || (x + hero_WIDTH > SCREEN_WIDTH)||checkCollision(holdpiece.getwall())) {
+    if((x < ZERO) || (x + hero_WIDTH > SCREEN_WIDTH)||checkCollision(holdpiece.getwall())) {
         //Move back
         x -= mVelX;
         mCollider.x = x;
@@ -94,7 +93,7 @@ void hero::move(wall holdpiece) {
     y += mVelY;
     mCollider.y = y;
     //If the hero collided or went too far up or down
-    if((y < 0) || (y + hero_HEIGHT > SCREEN_HEIGHT)||checkCollision(holdpiece.getwall())) {
+    if((y < ZERO) || (y + hero_HEIGHT > SCREEN_HEIGHT)||checkCollision(holdpiece.getwall())) {
         //Move back
         y -= mVelY;
         mCollider.y = y;
@@ -105,7 +104,7 @@ void hero::move() {
     x += mVelX;
     mCollider.x = x;
     //If the hero collided or went too far to the left or right
-    if((x < 0) || (x + hero_WIDTH > SCREEN_WIDTH)){
+    if((x < ZERO) || (x + hero_WIDTH > SCREEN_WIDTH)){
         //Move back
         x -= mVelX;
         mCollider.x = x;
@@ -114,7 +113,7 @@ void hero::move() {
     y += mVelY;
     mCollider.y = y;
     //If the hero collided or went too far up or down
-    if((y < 0) || (y + hero_HEIGHT > SCREEN_HEIGHT)){
+    if((y < ZERO) || (y + hero_HEIGHT > SCREEN_HEIGHT)){
         //Move back
         y -= mVelY;
         mCollider.y = y;

@@ -1,4 +1,5 @@
 #include "panel.h"
+#define offcoord -1000
 panel::panel(){}
 panel::~panel(){}
 void panel::setx(int& x){this->x=x;}
@@ -8,8 +9,8 @@ setx(x);
 sety(y);
 }
 void panel::setoffscreen(){
-x=-1000;
-x=-1000;
+x=offcoord;
+x=offcoord;
 }
 int panel::getx(){return x;}
 int panel::gety(){return y;}

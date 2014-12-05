@@ -1,11 +1,12 @@
 #include "LTextures.h"
 #include <SDL.h>
 #include <SDL_image.h>
+#define ZERO 0
 LTexture::LTexture() {
     //Initialize
     mTexture = NULL;
-    mWidth = 0;
-    mHeight = 0;
+    mWidth = ZERO;
+    mHeight = ZERO;
     }
 LTexture::~LTexture() {
     //Deallocate
@@ -16,21 +17,9 @@ void LTexture::free() {
     if(mTexture != NULL) {
         SDL_DestroyTexture(mTexture);
         mTexture = NULL;
-        mWidth = 0;
-        mHeight = 0;
+        mWidth = ZERO;
+        mHeight = ZERO;
         }
-    }
-void LTexture::setColor(Uint8 red, Uint8 green, Uint8 blue) {
-    //Modulate texture rgb
-    SDL_SetTextureColorMod(mTexture, red, green, blue);
-    }
-void LTexture::setBlendMode(SDL_BlendMode blending) {
-    //Set blending function
-    SDL_SetTextureBlendMode(mTexture, blending);
-    }
-void LTexture::setAlpha(Uint8 alpha) {
-    //Modulate texture alpha
-    SDL_SetTextureAlphaMod(mTexture, alpha);
     }
 int  LTexture::getWidth() {return mWidth;}
 int  LTexture::getHeight() {return mHeight;}

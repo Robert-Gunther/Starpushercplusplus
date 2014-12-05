@@ -24,8 +24,8 @@ class hero {
     private:
         int x, y;
         int mVelX, mVelY;
-        int SCREEN_HEIGHT;
-        int SCREEN_WIDTH;
+        static const int SCREEN_HEIGHT=480;
+        static const int SCREEN_WIDTH= 640;
         SDL_Rect mCollider;
     };
 #endif // HERO_H
